@@ -2,6 +2,10 @@ ARG ALPINE_VERSION=3.12
 FROM alpine:${ALPINE_VERSION}
 
 COPY . /mve
+WORKDIR /mve
+
+ENV HOME=/mve
+ENV PATH=$PATH:$HOME/bin
 
 RUN apk add --no-cache \
         make \
@@ -10,7 +14,7 @@ RUN apk add --no-cache \
         libpng-dev \
         tiff-dev \
         mesa-dev \
-    && cd /mve \
     && mkdir bin \
-    && make -j"$(nproc)" all
+    && make -j"$(nproc)" all \
+    && make container_links
 
