@@ -22,3 +22,9 @@ apps/scene2pset/scene2pset
 apps/sceneupgrade/sceneupgrade
 apps/sfmrecon/sfmrecon
 apps/umve/umve
+
+# data
+data/image/
+!data/image/.gitkeep
+data/scene/
+!data/scene/.gitkeep
