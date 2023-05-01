@@ -47,4 +47,20 @@ links:
 	ln -si $(APPDIR)/prebundle/prebundle $(BINDIR)
 	ln -si $(APPDIR)/umve/umve $(BINDIR)
 
-.PHONY: all clean links
+container_links:
+	ln -s $(APPDIR)/bundle2pset/bundle2pset $(BINDIR)
+	ln -s $(APPDIR)/dmrecon/dmrecon $(BINDIR)
+	ln -s $(APPDIR)/makescene/makescene $(BINDIR)
+	ln -s $(APPDIR)/meshconvert/meshconvert $(BINDIR)
+	ln -s $(APPDIR)/scene2pset/scene2pset $(BINDIR)
+	ln -s $(APPDIR)/sfmrecon/sfmrecon $(BINDIR)
+	ln -s $(APPDIR)/featurerecon/featurerecon $(BINDIR)
+	ln -s $(APPDIR)/fssrecon/fssrecon $(BINDIR)
+	ln -s $(APPDIR)/mesh2pset/mesh2pset $(BINDIR)
+	ln -s $(APPDIR)/meshalign/meshalign $(BINDIR)
+	ln -s $(APPDIR)/meshclean/meshclean $(BINDIR)
+	ln -s $(APPDIR)/sceneupgrade/sceneupgrade $(BINDIR)
+	ln -s $(APPDIR)/prebundle/prebundle $(BINDIR)
+	ln -s $(APPDIR)/umve/umve $(BINDIR)
+
+.PHONY: all clean links container_links

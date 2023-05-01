@@ -21,4 +21,8 @@ clean:
 links:
 	$(MAKE) -C apps $@
 
+# Creates symbolic links to all apps in $HOME/bin/ of container
+container_links:
+	$(MAKE) -C apps $@
+
 .PHONY: all doc test clean links
