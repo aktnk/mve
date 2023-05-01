@@ -1,0 +1,7 @@
+services:
+  mve:
+    build:
+      context: .
+    tty: true
+    volumes:
+      - ./data:/mve/data
