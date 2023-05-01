@@ -2,6 +2,11 @@ services:
   mve:
     build:
       context: .
+      # Timezoe and Alpine Linux version can be specified by enabling the following args: parameters.
+      # The following values are defaulted in the Dockerfile.
+      # args:
+      #   - ALPINE_VERSION=3.12
+      #   - TIMEZOME=Asia/Tokyo
     tty: true
     volumes:
       - ./data:/mve/data
