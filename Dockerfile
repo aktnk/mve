@@ -12,5 +12,5 @@ RUN apk add --no-cache \
         mesa-dev \
     && cd /mve \
     && mkdir bin \
-    && make all
+    && make -j"$(nproc)" all
 
