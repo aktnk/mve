@@ -3,7 +3,6 @@ FROM alpine:${ALPINE_VERSION}
 
 ARG TIMEZONE=Asia/Tokyo
 RUN apk add --no-cache tzdata \
-        doas \
         make \
         g++ \
         jpeg-dev \
