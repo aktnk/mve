@@ -30,6 +30,7 @@ clean:
 
 BINDIR ?= $(HOME)/bin/
 APPDIR := $(shell pwd)
+UL_BINDIR = /usr/local/bin/
 
 links:
 	ln -si $(APPDIR)/bundle2pset/bundle2pset $(BINDIR)
@@ -48,19 +49,19 @@ links:
 	ln -si $(APPDIR)/umve/umve $(BINDIR)
 
 container_links:
-	ln -s $(APPDIR)/bundle2pset/bundle2pset $(BINDIR)
-	ln -s $(APPDIR)/dmrecon/dmrecon $(BINDIR)
-	ln -s $(APPDIR)/makescene/makescene $(BINDIR)
-	ln -s $(APPDIR)/meshconvert/meshconvert $(BINDIR)
-	ln -s $(APPDIR)/scene2pset/scene2pset $(BINDIR)
-	ln -s $(APPDIR)/sfmrecon/sfmrecon $(BINDIR)
-	ln -s $(APPDIR)/featurerecon/featurerecon $(BINDIR)
-	ln -s $(APPDIR)/fssrecon/fssrecon $(BINDIR)
-	ln -s $(APPDIR)/mesh2pset/mesh2pset $(BINDIR)
-	ln -s $(APPDIR)/meshalign/meshalign $(BINDIR)
-	ln -s $(APPDIR)/meshclean/meshclean $(BINDIR)
-	ln -s $(APPDIR)/sceneupgrade/sceneupgrade $(BINDIR)
-	ln -s $(APPDIR)/prebundle/prebundle $(BINDIR)
-	ln -s $(APPDIR)/umve/umve $(BINDIR)
+	ln -s $(APPDIR)/bundle2pset/bundle2pset $(UL_BINDIR)
+	ln -s $(APPDIR)/dmrecon/dmrecon $(UL_BINDIR)
+	ln -s $(APPDIR)/makescene/makescene $(UL_BINDIR)
+	ln -s $(APPDIR)/meshconvert/meshconvert $(UL_BINDIR)
+	ln -s $(APPDIR)/scene2pset/scene2pset $(UL_BINDIR)
+	ln -s $(APPDIR)/sfmrecon/sfmrecon $(UL_BINDIR)
+	ln -s $(APPDIR)/featurerecon/featurerecon $(UL_BINDIR)
+	ln -s $(APPDIR)/fssrecon/fssrecon $(UL_BINDIR)
+	ln -s $(APPDIR)/mesh2pset/mesh2pset $(UL_BINDIR)
+	ln -s $(APPDIR)/meshalign/meshalign $(UL_BINDIR)
+	ln -s $(APPDIR)/meshclean/meshclean $(UL_BINDIR)
+	ln -s $(APPDIR)/sceneupgrade/sceneupgrade $(UL_BINDIR)
+	ln -s $(APPDIR)/prebundle/prebundle $(UL_BINDIR)
+	#ln -s $(APPDIR)/umve/umve $(UL_BINDIR)
 
 .PHONY: all clean links container_links
