@@ -30,6 +30,8 @@ Heritage, Darmstadt, Germany, 2014.*
 
 # Building MVE and UMVE
 
+## Compiling on Linux
+
 To download and build MVE, type:
 
     $ git clone https://github.com/simonfuhrmann/mve.git
@@ -50,8 +52,54 @@ System requirements to compile and run MVE or UVME are:
  * OpenGL (for libogl in MVE and UMVE)
  * Qt 5 (for UMVE, http://www.qt.io)
 
-Windows and OS X: Please refer to the Wiki pages for instructions.
+## Using Docker
 
+To download and build the docker image, type:
+
+    $ git clone https://github.com/simonfuhrmann/mve.git
+    $ cd mve
+    $ chmod -R 777 data
+    $ docker build .
+
+To run the docker container, type:
+
+    $ docker compose up -d
+
+Next, copy the image files to the data/image directory.
+And run the reconstruction pipeline.
+
+    $ docker compose exec mve reconst_pipe.sh
+
+As a result, the PLY files are saved in the data/scene directory.
+
+    $ ls data/scene/
+    prebundle.sfm  pset-L2.ply  surface-L2-clean.ply  surface-L2.ply  synth_0.out  views
+
+If you wish to execute individual commands, type the command you want to execute after `"docker compose exec mve "` . For example, in the case of the makescene command, type:
+
+    $ docker compose exec mve makescene -i data/image data/scene
+    MVE Makescene (built on Jun  3 2023, 01:53:34)
+
+    ** Warning: Output dir already exists.
+    ** This may leave old views in your scene.
+    -> Press ENTER to continue, or CTRL-C to exit.
+
+    Found 15 directory entries.
+    Creating output directories...
+    Skipping file .gitkeep, cannot load image.
+    Importing image: IMG_3472.jpg, writing MVE view: view_0000.mve...
+    ...
+
+To stop execution of the docker container, type:
+
+    $ docker compose down
+    [+] Running 2/2
+     ✔ Container mve-mve-1 Removed
+     ✔ Network mve_default  Removed
+
+## Compiling on Windows and OS X
+
+Windows and OS X: Please refer to the Wiki pages for instructions.
 
 # The Reconstruction Pipeline
 
