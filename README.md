@@ -68,7 +68,7 @@ To run the docker container, type:
 Next, copy the image files to the data/image directory.
 And run the reconstruction pipeline.
 
-    $ docker compose exec mve reconst_pipe.sh
+    $ docker compose exec mve ./reconst_pipe.sh
 
 As a result, the PLY files are saved in the data/scene directory.
 
